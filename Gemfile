@@ -73,3 +73,4 @@ end
 
 # Added manually
 gem 'devise'
+gem 'responders'
