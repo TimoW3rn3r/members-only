@@ -1,0 +1,21 @@
+<% if @post.errors.any? %>
+  <div class="error-explanation">
+    <div id="error">
+      <%= @post.errors.first.full_message %>
+    </div>
+  </div>
+<% end %>
+
+<%= form_with model: @post, method: :post do |form| %>
+  <div>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, "Body" %>
+    <%= form.text_area :body, size: "70x5" %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
