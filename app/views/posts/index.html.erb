@@ -11,3 +11,11 @@
 <% end %>
 
 <%= link_to "New Post", new_post_path %>
+
+<footer>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.first_name %> <%= current_user.last_name %>(<%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>)
+  <% else %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+</footer>
