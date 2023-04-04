@@ -1,0 +1,8 @@
+<div class="my-4">&nbsp;</div>
+<footer class="fixed bottom-0 bg-indigo-900 w-full py-2 text-blue-300 text-center">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.first_name %> <%= current_user.last_name %><%= link_to "(Sign out)", destroy_user_session_path, data: { "turbo-method": :delete }, class: "pl-1 text-blue-500 text-sm" %>
+  <% else %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+</footer>

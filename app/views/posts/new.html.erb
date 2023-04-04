@@ -1,3 +1,5 @@
+<h1 class="self-center">Write a New Post</h1>
+
 <% if @post.errors.any? %>
   <div class="error-explanation">
     <div id="error">
@@ -6,16 +8,16 @@
   </div>
 <% end %>
 
-<%= form_with model: @post, method: :post do |form| %>
+<%= form_with model: @post, method: :post, class: "flex flex-col items-center space-y-6" do |form| %>
   <div>
-    <%= form.label :title, "Title" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, "Title", class: "text-xl" %><br />
+    <%= form.text_field  :title, class: "bg-indigo-100 text-slate-700 focus:text-slate-900", size: "40" %>
   </div>
 
   <div>
-    <%= form.label :body, "Body" %>
-    <%= form.text_area :body, size: "70x5" %>
+    <%= form.label :body, "Body", class: "text-xl" %><br />
+    <%= form.text_area :body, class: "bg-indigo-100 text-slate-700 focus:text-slate-900", size: "40x8" %>
   </div>
 
-  <%= form.submit %>
+  <%= form.submit class: "px-8 py-2 text-white text-xl font-bold rounded-full bg-indigo-700 shadow-lg shadow-indigo-500/50 hover:bg-blue-500 hover:shadow-blue-500/50" %>
 <% end %>

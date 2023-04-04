@@ -1,21 +1,17 @@
-<h1>Posts</h1>
+<h1 class="self-center">All Posts</h1>
 
 <% @posts.each do |post| %>
-  <h3><%= post.title %></h1>
-  <% if user_signed_in? %>
-    <div>
-      - <%= post.user.first_name %> <%= post.user.last_name %>
-    </div>
-  <% end %>
-  <p><%= post.body %></p>
+  <div class="px-12 py-4 bg-indigo-200 rounded-xl shadow-lg">
+    <h3 class="mb-0"><%= post.title %></h1>
+    <% if user_signed_in? %>
+      <div>
+        <span class="pl-2 italic text-slate-600 text-sm">- <%= post.user.first_name %> <%= post.user.last_name %></span>
+      </div>
+    <% end %>
+    <p><%= post.body %></p>
+  </div>
 <% end %>
 
-<%= link_to "New Post", new_post_path %>
+<%= link_to "New Post", new_post_path, class: "w-max px-8 py-2 text-white text-xl self-center no-underline font-bold rounded-full bg-indigo-700 shadow-lg shadow-indigo-500/50 hover:bg-blue-500 hover:shadow-blue-500/50" %>
 
-<footer>
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.first_name %> <%= current_user.last_name %>(<%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>)
-  <% else %>
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
-</footer>
+
