@@ -74,3 +74,5 @@ end
 # Added manually
 gem 'devise'
 gem 'responders'
+
+gem "tailwindcss-rails", "~> 2.0"
