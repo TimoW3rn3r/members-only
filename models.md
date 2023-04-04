@@ -1,7 +1,9 @@
 User
 
 ```
-username:string   ->    [unique, present]
+# username:string   ->    [unique, present]
+first_name:string   ->    [present]
+last_name:string   ->    [present]
 email:string    ->    [unique, present]
 password:string   ->    [present] # Autocreated by Devise?
 
